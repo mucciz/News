@@ -1,0 +1,52 @@
+{% extends 'base.html'%}
+{% import 'macros.html' as macro%}
+
+{% block content %}
+
+    <!-- Jumbotron -->
+    <div class="card card-image jumbo" style="background-image: url(https://images.pexels.com/photos/261949/pexels-photo-261949.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);">
+    <div class="text-white text-center rgba-stylish-strong py-5 px-4">
+      <div class="py-5">
+  
+        <!-- Content -->
+        <h5 class="h5 orange-text"><i class="fas fa-camera-retro"></i> {{name}} </h5>
+        <h2 class="card-title h2 my-4 py-2">One source, infinite news</h2>
+        <p class="mb-4 pb-2 px-md-5 mx-md-5">In today's fast paced world, we lack time to just sit down and know what is happening aroud the world. Worry no more, we bring the news to you!</p>
+        <a href="/headlines&20" class="btn peach-gradient"><i class="fas fa-clone left"></i> Top Headlines</a>
+  
+      </div>
+    </div>
+    </div>
+  <!-- Jumbotron -->
+  
+
+    <div class="container">
+        <hr>
+        <div class="row">
+            <div class="col-md-12"><h1>General</h1></div>
+            {{ macro.displayNewsList(general) }}
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-md-12"><h1>Technology</h1></div>
+            {{ macro.displayNewsList(technology) }}
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-md-12"><h1>Business</h1></div>
+            {{ macro.displayNewsList(business) }}
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-md-12"><h1>Sports</h1></div>
+            {{ macro.displayNewsList(sports) }}
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-md-12"><h1>Health</h1></div>
+            {{ macro.displayNewsList(health) }}
+        </div>
+        <hr>
+    </div>
+
+{% endblock %}
