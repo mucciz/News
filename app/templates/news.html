@@ -1,0 +1,67 @@
+{%extends 'base.html'%}
+{% block content %}
+
+    <!-- Jumbotron -->
+    <div class="card card-image" style="background-image: url(https://images.pexels.com/photos/114820/pexels-photo-114820.jpeg?auto=format%2Ccompress&cs=tinysrgb&dpr=2&h=650&w=940);" style="background-attachment: fixed;">
+        <div class="text-white text-center rgba-stylish-strong py-5 px-4">
+          <div class="py-5">
+      
+            <!-- Content -->
+            <h5 class="h5 orange-text"><i class="fas fa-camera-retro"></i> News Highlights</h5>
+            <h2 class="card-title h2 my-4 py-2">{{name}}</h2>
+            <p class="mb-4 pb-2 px-md-5 mx-md-5">In today's fast paced world, we lack time to just sit down and know what is happening aroud the world. Worry no more, we bring the news to you!</p>
+            <a class="btn peach-gradient"><i class="fas fa-clone left"></i> View stories</a>
+      
+          </div>
+        </div>
+        </div>
+      <!-- Jumbotron -->
+      
+    
+    <div class="container">
+        <hr>
+    <div class="row">
+    {% for article in news %}
+    
+            <!-- Container -->
+        
+            <!-- Column -->
+            <div class="col-md-4 mb-4 d-flex align-items-stretch">
+          
+              <!--Card-->
+              <div class="card">
+          
+                <!--Card image-->
+                <div class="view">
+                  <img src=" {{article.urlToImage}} " class="card-img-top"
+                    alt="">
+                  <a href="{{article.url}}">
+                    <div class="mask pattern-6"></div>
+                  </a>
+                </div>
+    
+                <!--Card content-->
+                <div class="card-body" style="background-color: #e0e0e0">
+                  <!--Title-->
+                  <h4 class="card-title">{{article.title}}</h4>
+                  <p class="card-text"> Published on: {{article.publishedAt}}</p>
+                  <p class="card-text"> Publisher: {{article.author}}</p>
+                  <hr>
+                  <!--Text-->
+                  <p class="card-text">{{article.description}}</p>
+                    <a href="{{article.url}}" target="_blank" class=""><i class="fas fa-clone left"></i> View story</a>
+                </div>
+          
+              </div>
+              <!--/.Card-->
+          
+            </div>
+            <!-- Column -->
+              
+          <!-- Container -->
+        
+    {% endfor %}
+    </div>
+    <hr>
+    </div>
+{% endblock%}
