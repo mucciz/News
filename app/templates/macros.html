@@ -1,0 +1,18 @@
+{% macro displayNewsList(news_list) %}
+
+    {% for category in news_list %}
+        
+        <div class="col-md-3 col-lg-3 col-sm-6">
+            <div class="card  mb-3" style="max-width: 20rem;">
+                <div class="card-header" style="background-color:#aeaeae">{{ category.name }}</div>
+                <div class="card-body" style="background-color: #e0e0e0">
+                  <!-- <h5 class="card-title">Light Panel title</h5> -->
+                  <p class="card-text">{{category.description|truncate (100) }}</p>
+                  <!-- <a href="/news/{{category.id}}&20" class="btn btn-outline-primary waves-effect">Learn more</a> -->
+                  <a href="/news/{{category.id}}&20" target="_blank" class=""><i class="fas fa-clone left"></i> View stoies</a>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+
+{% endmacro %}
